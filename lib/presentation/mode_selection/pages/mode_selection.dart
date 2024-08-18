@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:spotify/common/widgets/main_button.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
-import 'package:spotify/main.dart';
 import 'package:spotify/presentation/mode_selection/cubit/theme_cubit.dart';
 import 'package:spotify/presentation/mode_selection/widgets/mode_button.dart';
 
