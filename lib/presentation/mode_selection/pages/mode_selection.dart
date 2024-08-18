@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:spotify/common/widgets/main_button.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
+import 'package:spotify/presentation/auth/pages/register_or_sign_in.dart';
 import 'package:spotify/presentation/mode_selection/cubit/theme_cubit.dart';
 import 'package:spotify/presentation/mode_selection/widgets/mode_button.dart';
 
@@ -70,11 +71,11 @@ class ModeSelectionPage extends StatelessWidget {
                   ),
                   MainButton(
                     onPressed: () {
-                      // Navigator.of(context).push(
-                      //   MaterialPageRoute(
-                      //     builder: (ctx) => const ModeSelectionPage(),
-                      //   ),
-                      // );
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (ctx) => const RegisterOrSignIn(),
+                        ),
+                      );
                     },
                     title: "Continue",
                   ),
