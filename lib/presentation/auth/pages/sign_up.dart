@@ -36,6 +36,31 @@ class SignUpPage extends StatelessWidget {
     );
   }
 
+  Widget _siginText(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          'Do you have an account?',
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+        ),
+        TextButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => SignInPage(),
+              ),
+            );
+          },
+          child: const Text(
+            'Sign In',
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
