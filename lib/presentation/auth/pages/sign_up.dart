@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:spotify/common/helpers/is_dark_mode.dart';
 import 'package:spotify/common/widgets/basic_app_bar.dart';
 import 'package:spotify/common/widgets/main_button.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/theme/app_colors.dart';
+import 'package:spotify/presentation/auth/pages/sign_in.dart';
 
 class SignUpPage extends StatelessWidget {
   SignUpPage({super.key});
@@ -36,27 +38,30 @@ class SignUpPage extends StatelessWidget {
     );
   }
 
-  Widget _siginText(BuildContext context) {
+    Widget _siginText(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
           'Do you have an account?',
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 14
+          ),
         ),
         TextButton(
-          onPressed: () {
+          onPressed: (){
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (BuildContext context) => SignInPage(),
-              ),
+                builder: (BuildContext context) => SignInPage()
+              )
             );
           },
           child: const Text(
             'Sign In',
-          ),
-        ),
+          )
+        )
       ],
     );
   }
@@ -88,14 +93,14 @@ class SignUpPage extends StatelessWidget {
               const SizedBox(
                 height: 14,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "If you need any support ",
-                    style: TextStyle(color: AppColors.darkGrey),
+                    style: TextStyle(color: context.isDarkMode ? Colors.white: AppColors.darkGrey),
                   ),
-                  Text(
+                  const Text(
                     "click here",
                     style: TextStyle(color: AppColors.primary),
                   ),
@@ -138,27 +143,26 @@ class SignUpPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
                     Icons.mail,
-                    color: AppColors.darkGrey,
-                    size: 48,
+                    color: context.isDarkMode ? Colors.white : AppColors.darkGrey,
+                    size: 32,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 59,
                   ),
                   Icon(
                     Icons.apple,
-                    color: AppColors.darkGrey,
-                    size: 48,
+                    color: context.isDarkMode ? Colors.white : AppColors.darkGrey,
+                    size: 32,
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20,),
+              _siginText(context),
             ],
           ),
         ),
