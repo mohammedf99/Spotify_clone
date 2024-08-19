@@ -116,9 +116,19 @@ class SignUpPage extends StatelessWidget {
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.mail, color: AppColors.darkGrey, size: 48,),
-                  SizedBox(width: 59,),
-                  Icon(Icons.apple, color: AppColors.darkGrey, size: 48,),
+                  Icon(
+                    Icons.mail,
+                    color: AppColors.darkGrey,
+                    size: 48,
+                  ),
+                  SizedBox(
+                    width: 59,
+                  ),
+                  Icon(
+                    Icons.apple,
+                    color: AppColors.darkGrey,
+                    size: 48,
+                  ),
                 ],
               ),
               const SizedBox(
