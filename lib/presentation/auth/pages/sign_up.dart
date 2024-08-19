@@ -38,30 +38,27 @@ class SignUpPage extends StatelessWidget {
     );
   }
 
-    Widget _siginText(BuildContext context) {
+  Widget _siginText(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
           'Do you have an account?',
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 14
-          ),
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
         ),
         TextButton(
-          onPressed: (){
+          onPressed: () {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (BuildContext context) => SignInPage()
-              )
+                builder: (BuildContext context) => SignInPage(),
+              ),
             );
           },
           child: const Text(
             'Sign In',
-          )
-        )
+          ),
+        ),
       ],
     );
   }
@@ -98,7 +95,10 @@ class SignUpPage extends StatelessWidget {
                 children: [
                   Text(
                     "If you need any support ",
-                    style: TextStyle(color: context.isDarkMode ? Colors.white: AppColors.darkGrey),
+                    style: TextStyle(
+                        color: context.isDarkMode
+                            ? Colors.white
+                            : AppColors.darkGrey),
                   ),
                   const Text(
                     "click here",
@@ -148,7 +148,8 @@ class SignUpPage extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.mail,
-                    color: context.isDarkMode ? Colors.white : AppColors.darkGrey,
+                    color:
+                        context.isDarkMode ? Colors.white : AppColors.darkGrey,
                     size: 32,
                   ),
                   const SizedBox(
@@ -156,12 +157,15 @@ class SignUpPage extends StatelessWidget {
                   ),
                   Icon(
                     Icons.apple,
-                    color: context.isDarkMode ? Colors.white : AppColors.darkGrey,
+                    color:
+                        context.isDarkMode ? Colors.white : AppColors.darkGrey,
                     size: 32,
                   ),
                 ],
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               _siginText(context),
             ],
           ),
